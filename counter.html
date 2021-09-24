@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+
+<!--Head information including the sources for the scripts used-->
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home</title>
+  <link rel="stylesheet" type="text/css" href="./counter.css">
+  <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+  <script src="menu.js"></script>
+
+  <!-- Header Image -->  
+  <div id="header">
+    <img src="oval.png" alt="Banner Image" width=100%/> <!--I made the banner image and saved it as a png file which is linked to in this src setting its width to 100% of the device-->
+  </div>
+</head>
+
+<body>
+
+  <!--This link loads an icon library to show a hamburger menu (horizontal bars) when the menu is shrunk to small screens to increase repsonsiveness -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+  <!--Navigation menu with the active class linking to css which shows the 'active' links as different visually so that users know which link they are in automatically-->
+  <div class="topnav" id="myTopnav">
+    <a href="index.html">Home</a>
+    <a href="counter.html" class="active">Stat Counter</a>
+    <a href="captains.html">Captains</a>
+    <a href="pathways.html">Pathways</a>
+    <a href="register.html">Register</a>
+    <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+      <i class="fa fa-bars"></i>
+    </a>
+  </div>
+
+  <!--Page Header--> 
+  <div id="PageTitle">
+    <h3 style="font-size: 15px;">Count Your Statistics</h3>
+  </div>
+
+<br>
+
+<!--Statistics Counter buttons with unicode arrows & @click adding or subtracting from the Vue data shown in eg:{{ kicks }}-->
+  <div id="counter">
+    <h1 style="font-size: 5vmin;"> Kicks {{ kicks }} </h1>
+    <button id=minusKick v-on:click="kicks--">&#11167;</button>
+    <button id=addKick v-on:click="kicks++">&#11165;</button>
+    
+    <br><br>
+
+    <h1 style="font-size: 5vmin;"> Handballs {{ handballs }} </h1>
+    <button id=minusHandball v-on:click="handballs--">&#11167;</button>
+    <button id=addHandball v-on:click="handballs++">&#11165;</button>
+
+    <br><br>
+
+    <h1 style="font-size: 5vmin;"> Marks {{ marks }} </h1>
+    <button id=minusMark v-on:click="marks--">&#11167;</button>
+    <button id=addMark v-on:click="marks++">&#11165;</button>
+
+    <br><br>
+
+    <h1 style="font-size: 5vmin;"> Tackles {{ tackles }} </h1>
+    <button id=minusTackle v-on:click="tackles--">&#11167;</button>
+    <button id=addTackle v-on:click="tackles++">&#11165;</button>
+
+    <br><br>
+
+    <h1 style="font-size: 5vmin;"> Goals {{ goals }} </h1>
+    <button id=minusGoal v-on:click="goals--">&#11167;</button>
+    <button id=addGoal v-on:click="goals++">&#11165;</button>
+
+    <br><br>
+
+    <h1 style="font-size: 5vmin;"> Behinds {{ behinds }} </h1>
+    <button id=minusBehind v-on:click="behinds--">&#11167;</button>
+    <button id=addBehind v-on:click="behinds++">&#11165;</button>
+
+    
+    <!--Script for the vue aspect of the buttons to add/minus numbers where the data is automatically set to 0 & @click on the buttons it will either
+    minus or add 1 integer to that data-->
+    <script>
+    var app = new Vue(
+      {
+          el: '#counter',
+          data: {
+                  kicks: '0',
+                  handballs: '0',
+                  marks: '0',
+                  tackles: '0',
+                  goals: '0', 
+                  behinds: '0',
+              }
+      })
+    </script>
+  </div>
+
+  <br><br>
+  <br><br>
+  
+  <!--Footer for all pages-->
+  <div class="footer">
+    Created by Joshua Watterson
+  </div>
+
+</body>
+</html>

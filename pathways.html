@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+
+<!--Head information including the sources for the scripts used-->
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home</title>
+  <link rel="stylesheet" type="text/css" href="./pathways.css">
+  <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+  <script src="menu.js"></script>
+  <!-- Header Image -->  
+  <div id="header">
+  <img src="oval.png" alt="Banner Image" width=100%/> <!--I made the banner image and saved it as a png file which is linked to in this src setting its width to 100% of the device-->
+  </div>
+</head>
+
+
+<body>  
+  <!--This link loads an icon library to show a hamburger menu (horizontal bars) when the menu is shrunk to small screens to increase repsonsiveness -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <!--Navigation menu with the active class linking to css which shows the 'active' links as different visually so that users know which link they are in automatically-->
+  <div class="topnav" id="myTopnav">
+    <a href="index.html" >Home</a>
+    <a href="counter.html">Stat Counter</a>
+    <a href="captains.html" >Captains</a>
+    <a href="pathways.html" class="active">Pathways</a>
+    <a href="register.html">Register</a>
+    <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+      <i class="fa fa-bars"></i>
+    </a>
+  </div>
+
+  <!--Page Header--> 
+  <div id="PageTitle">
+    <h3 style="font-size: 15px;">Find your local pathways</h3>
+  </div>
+
+  <br>
+
+  <!--Sourced an interactive map for Australia where I could edit the content to link to, say & look how I wanted
+  This div was also edited in CSS to not show once device screen size reached a certain size, leaving just the filter list-->
+  <div id="map" align="center"><iframe style="width:60%; border:0; height:80vh"  src="https://createaclickablemap.com/map.php?id=105940&maplocation=australia&online=true" width="900" height="525" style="border: none;"></iframe></div>
+
+  <!--This div utilises the filter search for state so that the users can search for their state by typing the name into the input box-->
+  <div id="app">
+    <div>
+      <input type="text" v-model="keyword" placeholder="Search your state" />
+      <br>
+    </div>
+     <div class="card" v-for="state in filteredList">
+       <a id="states" v-bind:href="state.link" target="_blank">
+         {{ state.area }}
+       </a>
+     </div>
+  </div>
+
+    <script src="pathways.js"></script>
+
+<br><br><br>
+
+  <!--Footer for all pages-->
+  <div class="footer">
+    Created by Joshua Watterson
+  </div>
+
+
+</body>
+
+</html>

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!--Head information including the sources for the scripts used-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" type="text/css" href="./register.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script src="menu.js"></script>
+    <!-- Header Image -->  
+    <div id="header">
+    <img src="oval.png" alt="Banner Image" width=100%/> <!--I made the banner image and saved it as a png file which is linked to in this src setting its width to 100% of the device-->
+    </div>
+</head>
+
+<body>
+
+    <!--This link loads an icon library to show a hamburger menu (horizontal bars) when the menu is shrunk to small screens to increase repsonsiveness -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+    <!--Navigation menu with the active class linking to css which shows the 'active' links as different visually so that users know which link they are in automatically-->
+    <div class="topnav" id="myTopnav">
+        <a href="index.html">Home</a>
+        <a href="counter.html">Stat Counter</a>
+        <a href="captains.html">Captains</a>
+        <a href="pathways.html">Pathways</a>
+        <a href="register.html" class="active">Register</a>
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+            <i class="fa fa-bars"></i>
+        </a>
+    </div>
+
+    <!--Page Header--> 
+    <div id="PageTitle">
+        <h3 style="font-size: 15px;">Registration Form</h3>
+    </div>
+
+<br>
+
+    <!--Registration form labels and using v-model to take the value entered by the user into the script,
+    The input type of password has been used so that the text the user inputs is shown as *** for security
+
+    I have put the submit.prevent here for visuals so that the page doesn't refresh when you click submit and it logs the data with the console but this wouldn't 
+    be utilised in a full version of the website-->
+    <form @submit.prevent="handleSubmit" id="loginbox"> 
+        <h3 id="loginheader">Registration Form</h3> <br>
+        <label for="">Username</label>
+        <li><input id="username" v-model="username" type="text" placeholder="Enter your username"></li>
+
+        <label for="">Password</label>
+        <li><input id="password" v-model="password" type="password" placeholder="Please enter your password"></li>
+
+        <!--The input type of email has been used so that the text the user inputs has to be an email format including an @, Placeholder text is there prompting the user to enter the details-->
+        <label for="">Email</label>
+        <li><input id="email" v-model="email" type="email" placeholder="example@gmail.com"></li>
+
+        <button id="submitBtn" v-on:click="checkInput">Submit</button>
+    </form>
+
+    <!--This script lets the user enter their details, if a field is left blank the alert will pop up
+    saying that the required fields need to be entered, if all fields are entered there will be no alert,-->
+    <script>
+    var form = new Vue({
+        el: "#loginbox",
+        data: {
+          username: '',
+          password: '',
+          email: '',  
+
+        },
+        //The method of checking the input is used to check that a string has been entered by the user in the username & password fields & a valid email in the email field
+        //If the fields do not have the correct str/email entered the alert will pop up to let the user know that they need to input information into the required fields.
+        methods: {
+            checkInput: function() {
+                var str ='';
+                if (this.username) {
+                    str = str + this.username;
+                }
+                if (this.password) {
+                    str = str + this.password;
+                }
+                if (this.email) {
+                    email = email + this.email;
+                }
+                else {
+                    alert("Please provide an input for all fields")
+                }
+            },
+            //I have added the handleSubmit so that the console will log into the console, the username, password & email that the user entered
+            handleSubmit() {
+                console.log('username: ', this.username)
+                console.log('password: ', this.password)
+                console.log('email: ', this.email)
+            } 
+
+
+        }
+
+    })
+    </script>
+
+
+    <!--Footer for all pages-->
+    <div class="footer">
+    Created by Joshua Watterson
+    </div>
+
+</body>
+</html>

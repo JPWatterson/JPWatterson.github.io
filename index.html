@@ -1,113 +1,58 @@
 <!DOCTYPE html>
 <html>
-<head>
+
 <!--Head information including the sources for the scripts used-->
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
-    <link rel="stylesheet" type="text/css" href="./css/index.css">
-    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
-    <script src="./app.js"></script> 
-    <script src="js/menu.js"></script>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home</title>
+  <link rel="stylesheet" type="text/css" href="./index.css">
+  <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+  <script src="menu.js"></script>
   
   <!-- Header Image -->  
   <div id="header">
-    <img src="images/oval.png" alt="Banner Image" width=100%/>
+    <img src="oval.png" alt="Banner Image" width=100%/> <!--I made the banner image and saved it as a png file which is linked to in this src setting its width to 100% of the device-->
   </div>
-
 </head>
 
 <body>
+  <!--This loads an icon library to show a hamburger menu (horizontal bars) when the menu is shrunk to small screens -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-<!-- Loading of the hamburger icon for menu on small screens -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
-
-   <!-- Top Navigation Menu -->
-   <div class="topnav" id="myTopnav">
+  <!--Navigation menu with the active class linking to css which shows the 'active' links as different visually so that users know which link they are in automatically-->
+  <div class="topnav" id="myTopnav">
     <a href="index.html" class="active">Home</a>
-    <a href="About.html">About</a>
-    <a href="login.html">Login</a>
-    <a href="contact.html">Contact</a>
+    <a href="counter.html">Stat Counter</a>
+    <a href="captains.html">Captains</a>
+    <a href="pathways.html">Pathways</a>
+    <a href="register.html">Register</a>
     <a href="javascript:void(0);" class="icon" onclick="myFunction()">
       <i class="fa fa-bars"></i>
     </a>
   </div>
 
- <!--Counter Header (Will probably use similar on each page for a page header in final)--> 
-<div id="CounterTitle">
-<h3 style="font-size: 1.8vmax;">Statistics Counter</h3>
-</div>
-<br>
+  <!--Page Header--> 
+  <div id="PageTitle">
+    <h3 style="font-size: 15px;">About Inside/50</h3>
+  </div>
+  <div class="about">
+    <h2>What is Inside/50?</h2>
+    <p>The Inside/50 responsive web app is designed to help young footballers find, enter & excel in Australian Rules football pathways to achieve their goal of reaching the elite level of the sport.</p>
+    <p> Our aim is to give players, coaches & parents alike the foundations to nurture elite footballing talent all around Australia by providing information on player pathways & giving users the ability to track key statistical areas.</p>
 
-<!--Counter buttons and text for statistics to be recorded-->
-<div id="counter">
-    <h1 style="font-size: 4vmin;"> Kicks {{ kicks }} </h1>
-    <button id=minusKick @click="kicks--">&#11167;</button>
-    <button id=addKick @click="kicks++">&#11165;</button>
-    
+  </div>
 
-    <br></br>
-    <br></br>
-
-    <h1 style="font-size: 4vmin;"> Handballs {{ handballs }} </h1>
-    <button id=minusHandball @click="handballs--">&#11167;</button>
-    <button id=addHandball @click="handballs++">&#11165;</button>
-    
-
-    <br></br>
-    <br></br>
-
-    <h1 style="font-size: 4vmin;"> Marks {{ marks }} </h1>
-    <button id=minusMark @click="marks--">&#11167;</button>
-    <button id=addMark @click="marks++">&#11165;</button>
-
-    <br></br>
-    <br></br>
-
-    <h1 style="font-size: 4vmin;"> Tackles {{ tackles }} </h1>
-    <button id=minusTackle @click="tackles--">&#11167;</button>
-    <button id=addTackle @click="tackles++">&#11165;</button>
-
-    <br></br>
-    <br></br>
-
-    <h1 style="font-size: 4vmin;"> Goals {{ goals }} </h1>
-    <button id=minusGoal @click="goals--">&#11167;</button>
-    <button id=addGoal @click="goals++">&#11165;</button>
-
-    <br></br>
-    <br></br>
-
-    <h1 style="font-size: 4vmin;"> Behinds {{ behinds }} </h1>
-    <button id=minusBehind @click="behinds--">&#11167;</button>
-    <button id=addBehind @click="behinds++">&#11165;</button>
-
-    
-    <!--Script for the java/vue aspect of the buttons to add/minus numbers-->
-    <script>
-    var app = new Vue(
-      {
-          el: '#counter',
-          data: {
-                  kicks: '0',
-                  handballs: '0',
-                  marks: '0',
-                  tackles: '0',
-                  goals: '0', 
-                  behinds: '0',
-              }
-      })
-    </script>
-</div>
-
-
-
-<br>
-<br>
-<br>
-<br>
+  <div class="how">
+    <h2>How does Inside/50 work?</h2>
+    <p>Our users can utilise our Stat Counter to keep track of their gameday statistics in real-time and allow live feedback to be given to the players during their games so that they can improve on their deficient areas.</p>
+    <p>User can also see a list of the current captains of each AFL team as well as the amount of games they have played in an easy to digest format as well as find their local talent pathways available in their state by
+      either searching for the name in the filter section or by clicking their respective state on the interactive image of Australia.
+    </p>
   
+  </div>
+  
+
 <!--Footer for all pages-->
   <div class="footer">
     Created by Joshua Watterson

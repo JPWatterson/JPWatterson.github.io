@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+
+<!-- Head information including the sources for the Vue script used & CSS file -->
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reaction</title>
+  <link rel="stylesheet" type="text/css" href="./captains.css">
+  <script src="https://unpkg.com/vue@3.0.2"></script>
+
+  <!-- Source of the JavaScript for the responsive menu -->
+  <script src="menu.js"></script>
+
+  <!-- Header Image -->  
+  <div id="header">
+    <img src="oval.png" alt="Banner Image" width=100%/> <!--I made the banner image and saved it as a png file which is linked to in this src setting its width to 100% of the device-->
+  </div>
+</head>
+
+<body>
+
+  <!--This link loads an icon library to show a hamburger menu (horizontal bars) when the menu is shrunk to small screens to increase repsonsiveness -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <!--Navigation menu with the active class linking to css which shows the 'active' links as different visually so that users know which link they are in automatically-->
+  <div class="topnav" id="myTopnav">
+    <a href="index.html" >Home</a>
+    <a href="counter.html">Stat Counter</a>
+    <a href="captains.html" class="active">Captains</a>
+    <a href="pathways.html">Pathways</a>
+    <a href="register.html">Register</a>
+    <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+      <i class="fa fa-bars"></i>
+    </a>
+  </div>
+
+  <!--Page Header--> 
+  <div id="PageTitle">
+    <h3 style="font-size: 15px;">Current AFL Captains</h3>
+  </div>
+
+  <br>
+
+  <!--Shows a list of AFL Teams & their captains with the data pulled from the captains.js script file-->
+  <div id="captains">
+    <button @click="toggleshowCaptains">
+      <span v-if="showCaptains">Hide List</span> <!--showCaptains means that if it is true it will have the "Hide Captains" text on the button but be showing the captains list-->
+      <span v-else=>Show List</span> <!--else means that if it is false it will have the "Show Captains" text on the button but wont be showing the captains list-->
+    </button>
+    <br><br>
+    <div v-if="showCaptains">
+      <ul>
+        <li v-for="captains in captains"> <!--Pulls the captains prop from the js file-->
+          <h2>{{ captains.team }}</h2>
+          <pre>{{ captains.captain }},  {{ captains.games }} games</pre> <!--I used <pre> here so that I could easily add extra spaces betwene the data and the | characters which isn't easily configured in <p>-->
+          <br> 
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <script src="captains.js"></script>
+
+  <br><br>
+
+  <!--Footer for all pages-->
+  <div class="footer">
+    Created by Joshua Watterson
+  </div>
+
+</body>
+</html>

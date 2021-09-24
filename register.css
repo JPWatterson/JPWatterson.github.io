@@ -1,6 +1,12 @@
+/* Page Styling */
+* {
+  margin: 0px; 
+  padding: 0px;
+}
+
 /* Top Navigation Main */
 .topnav {
-    margin-top: 150px;
+    margin-top: -4px;
     background-color: #009587;
     overflow: hidden;
     text-align: center;
@@ -26,7 +32,8 @@
   /* Navigation Active Link Styling */
   .topnav a.active {
     background-color: #1c2228;
-    color: white;
+    color: #009587;
+    font-weight: 600;
   }
   
   /* Hide the link that should open and close the topnav on small screens */
@@ -58,18 +65,64 @@
     }
   }
 
-* {
-    margin: 0px; 
-    padding: 0px;}
 
+/* Header Styling */
+#header {
+  background-image: url("images/oval.png");
+  color: white;
+  width: 1800;
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+
+/* Body Styling */
 body {
-    background-color: #1c2228;
     margin: 0px;
+    background-color: #12161a;
 
 }
 
+/* Footer Styling */
+.footer {
+  position: fixed;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  padding-top: 10px;
+  left: 0;
+  bottom: 0;
+  height: 20px;
+  width: 100%;
+  background-color: #1c2228;
+  color: white;
+  text-align: center;
+}
+
+#PageTitle {
+  background-color: #1c2228;
+  position: relative;
+  width: 100%;
+  height: 25px;
+  padding-top: 10px;
+}
+
+h3 {
+  color: white;
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif  
+}
+
+
+/* --------------------------------------------------------------------------------------------------------------- */
+/* ----------------------------------Register Page Specific Styling----------------------------------------------- */
+/* ------------------------------------------------------------g-------------------------------------------------- */
+
 #loginbox {
-    margin: 10% auto;
+    margin: 50px auto;
     top: 20%;
     left: 50%;
     width: 250px;
@@ -86,52 +139,46 @@ body {
   font-family: helvetica;
   font-weight: bold;
   font-size: 20px;
+  text-align: center;
 }
 
-ul {
+label {
+  font-weight: bold;
+  font-size: 14px;
+}
+
+form {
     list-style-type: none;
-    text-align: center;
 
 }
 
-ul li {
+form li {
     width: 250px;
     margin-bottom: 10px;
+    text-align: left;
 }
 
-ul li input {
+form li input {
     width: 250px;
     text-align: center;
     padding: 8px 0px;
     border:none;
+    text-align: left;
+    text-indent: 10px;
     background-color: #ffffff;
 }
 
 
-#submitBtn {
+button {
     color: white;
     background-color: #1c2228; 
+    width: 100%;
+    border: none;
+    height: 35px;
 }
 
-#submitBtn:hover {
+button:hover {
     color: white;
     background-color: #39454F; 
-}
-
-#login {
-    width: 250px;
-    height: auto;
-    padding: 20px 30px;
-    color: white;
-    font-family: helvetica;
-    background-color: #009587; 
-    border-radius: 10px;
-    box-shadow: 0 0 10px 0 #000;
-    margin: auto;
-}
-
-#addKick {
-    color: white;
-    background-color: green;
-
+    cursor: pointer;
 }
